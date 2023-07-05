@@ -26,7 +26,7 @@ async function main() {
 
 async function deployContracts() {
   const contractNameAddr = await deployStandaloneContracts();
-  
+
   const botContractName = "FlashLoanArbitrageBot";
   console.log(`deploying ${botContractName} contract`);
 
@@ -40,7 +40,7 @@ async function deployContracts() {
   );
 
   contract = await contract.waitForDeployment();
-  
+
   console.log(
     `contract with name ${botContractName} was deployed to address: ${await contract.getAddress()}`
   );
@@ -65,6 +65,7 @@ async function deployStandaloneContracts(): Promise<Map<string, string>> {
 
   return contractNameAddr;
 }
+
 
 main().catch((error) => {
   console.error(error);
